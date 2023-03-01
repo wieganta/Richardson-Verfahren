@@ -1,4 +1,5 @@
 from vector import *
+
 class csr_matrix:
 
     def __init__(self, csr_tup):
