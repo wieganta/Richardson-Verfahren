@@ -10,13 +10,13 @@ class csr_matrix:
     def __matmul__(self, x: vector):
         m = len(self.indptr) - 1
         b = [0] * m
-        vector(b)
+
         for i in range(m):
             intervall = self.indptr[i:i + 2]
             for j in range(intervall[0], intervall[1]):
                 b[i] = b[i] + self.data[j] * x[self.indices[j]]
 
-        return b
+        return vector(b)
 
 
 class csr_tridiagonal:
@@ -59,13 +59,13 @@ class csr_tridiagonal:
     def __matmul__(self, x: vector):
         m = len(self.indptr) - 1
         b = [0] * m
-        vector(b)
+
         for i in range(m):
             intervall = self.indptr[i:i + 2]
             for j in range(intervall[0], intervall[1]):
                 b[i] = b[i] + self.data[j] * x[self.indices[j]]
 
-        return b
+        return vector(b)
 
 
 class dense_to_csr:
@@ -87,10 +87,10 @@ class dense_to_csr:
     def __matmul__(self, x: vector):
         m = len(self.indptr) - 1
         b = [0] * m
-        vector(b)
+
         for i in range(m):
             intervall = self.indptr[i:i + 2]
             for j in range(intervall[0], intervall[1]):
                 b[i] = b[i] + self.data[j] * x[self.indices[j]]
 
-        return b
+        return vector(b)
