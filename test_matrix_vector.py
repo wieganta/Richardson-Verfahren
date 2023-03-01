@@ -1,4 +1,6 @@
 from csr_Matrix import *
+from vector import *
+
 data = [1,3,2,-1,4,5]
 indices = [0,3,1,3,0,1]
 indptr = [0,2,3,4,6]
@@ -29,3 +31,6 @@ z_1 = matrix_B @ z
 print(x_1)
 print(y_1)
 print(z_1)
+
+e = vector([1,2,3,4])
+print(e.euklidische_norm_quadrat())
