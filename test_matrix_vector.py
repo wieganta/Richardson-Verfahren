@@ -2,6 +2,23 @@ from csr_Matrix import *
 from vector import *
 from richardson_verfahren import *
 
+#Richardson_verfahren_example:
+
+save_path = "examples/out/heat_equation.gif"
+tridiagonalmatrix = (-1,2,-1)
+n = 50
+A = csr_tridiagonal(tridiagonalmatrix, n)
+x = vector([0] * n)
+b = vector([1] * n)
+maxiter = 10000
+theta = 0.0001
+tol = 10e-5
+
+print("richardson_verfahren_exaple: ")
+print(richardson_verfahren (A,b,x,theta,maxiter,tol))
+
+
+
 #Richardson_verfahren:
 
 data = [1,2,3,4]
